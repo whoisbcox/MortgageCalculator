@@ -57,11 +57,10 @@ public class Main {
     ) {
         float monthlyInterest = annualInterest / PERCENT / MONTHS_IN_YEAR;
         short numberOfPayments = (short) (years * MONTHS_IN_YEAR);
-        double balance = principal
+
+        return principal
                 * (Math.pow(1 + monthlyInterest, numberOfPayments) - Math.pow(1 + monthlyInterest, numberOfPaymentsMade))
                 / (Math.pow(1 + monthlyInterest, numberOfPayments) - 1);
-
-        return balance;
     }
 
     public static double calculateMortgage(
@@ -70,10 +69,9 @@ public class Main {
             byte years) {
         float monthlyInterest = annualInterest / PERCENT / MONTHS_IN_YEAR;
         short numberOfPayments = (short) (years * MONTHS_IN_YEAR);
-        double mortgage = principal
+
+        return principal
                 * (monthlyInterest * Math.pow(1 + monthlyInterest, numberOfPayments))
                 / (Math.pow(1 + monthlyInterest, numberOfPayments) - 1);
-
-        return mortgage;
     }
 }
